@@ -44,7 +44,7 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.trackBarUpColor = new System.Windows.Forms.TrackBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,13 +58,19 @@
             this.浮雕ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.变暗ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.柔化ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trackBarDownColor = new System.Windows.Forms.TrackBar();
+            this.labelUpColor = new System.Windows.Forms.Label();
+            this.labelDownColor = new System.Windows.Forms.Label();
+            this.锐化ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.雾化ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarUpColor)).BeginInit();
             this.menuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarDownColor)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -80,7 +86,7 @@
             // 
             // OpenBox
             // 
-            this.OpenBox.Location = new System.Drawing.Point(9, 489);
+            this.OpenBox.Location = new System.Drawing.Point(364, 578);
             this.OpenBox.Name = "OpenBox";
             this.OpenBox.Size = new System.Drawing.Size(96, 36);
             this.OpenBox.TabIndex = 1;
@@ -90,7 +96,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(111, 495);
+            this.button1.Location = new System.Drawing.Point(449, 578);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 35);
             this.button1.TabIndex = 2;
@@ -139,7 +145,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(90, 579);
+            this.button3.Location = new System.Drawing.Point(197, 580);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 35);
             this.button3.TabIndex = 8;
@@ -149,7 +155,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(9, 537);
+            this.button4.Location = new System.Drawing.Point(65, 580);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 36);
             this.button4.TabIndex = 9;
@@ -175,7 +181,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(191, 580);
+            this.button6.Location = new System.Drawing.Point(269, 580);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(74, 35);
             this.button6.TabIndex = 15;
@@ -185,7 +191,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(100, 540);
+            this.button7.Location = new System.Drawing.Point(135, 578);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(68, 33);
             this.button7.TabIndex = 16;
@@ -214,16 +220,15 @@
             this.numericUpDown3.Size = new System.Drawing.Size(120, 21);
             this.numericUpDown3.TabIndex = 19;
             // 
-            // trackBar1
+            // trackBarUpColor
             // 
-            this.trackBar1.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
-            this.trackBar1.LargeChange = 1;
-            this.trackBar1.Location = new System.Drawing.Point(475, 466);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(128, 45);
-            this.trackBar1.TabIndex = 21;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.trackBarUpColor.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
+            this.trackBarUpColor.Location = new System.Drawing.Point(45, 463);
+            this.trackBarUpColor.Maximum = 100;
+            this.trackBarUpColor.Name = "trackBarUpColor";
+            this.trackBarUpColor.Size = new System.Drawing.Size(216, 45);
+            this.trackBarUpColor.TabIndex = 21;
+            this.trackBarUpColor.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // menuStrip1
             // 
@@ -242,7 +247,9 @@
             this.马赛克ToolStripMenuItem1,
             this.浮雕ToolStripMenuItem1,
             this.变暗ToolStripMenuItem,
-            this.柔化ToolStripMenuItem});
+            this.柔化ToolStripMenuItem,
+            this.锐化ToolStripMenuItem,
+            this.雾化ToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(919, 25);
@@ -332,12 +339,57 @@
             this.柔化ToolStripMenuItem.Text = "柔化";
             this.柔化ToolStripMenuItem.Click += new System.EventHandler(this.柔化ToolStripMenuItem_Click);
             // 
+            // trackBarDownColor
+            // 
+            this.trackBarDownColor.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
+            this.trackBarDownColor.Location = new System.Drawing.Point(45, 498);
+            this.trackBarDownColor.Maximum = 100;
+            this.trackBarDownColor.Name = "trackBarDownColor";
+            this.trackBarDownColor.Size = new System.Drawing.Size(216, 45);
+            this.trackBarDownColor.TabIndex = 26;
+            this.trackBarDownColor.Scroll += new System.EventHandler(this.trackBarDownColor_Scroll);
+            // 
+            // labelUpColor
+            // 
+            this.labelUpColor.AutoSize = true;
+            this.labelUpColor.Location = new System.Drawing.Point(-2, 463);
+            this.labelUpColor.Name = "labelUpColor";
+            this.labelUpColor.Size = new System.Drawing.Size(41, 12);
+            this.labelUpColor.TabIndex = 27;
+            this.labelUpColor.Text = "调亮：";
+            // 
+            // labelDownColor
+            // 
+            this.labelDownColor.AutoSize = true;
+            this.labelDownColor.Location = new System.Drawing.Point(-2, 495);
+            this.labelDownColor.Name = "labelDownColor";
+            this.labelDownColor.Size = new System.Drawing.Size(41, 12);
+            this.labelDownColor.TabIndex = 28;
+            this.labelDownColor.Text = "调暗：";
+            // 
+            // 锐化ToolStripMenuItem
+            // 
+            this.锐化ToolStripMenuItem.Name = "锐化ToolStripMenuItem";
+            this.锐化ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.锐化ToolStripMenuItem.Text = "锐化";
+            this.锐化ToolStripMenuItem.Click += new System.EventHandler(this.锐化ToolStripMenuItem_Click);
+            // 
+            // 雾化ToolStripMenuItem
+            // 
+            this.雾化ToolStripMenuItem.Name = "雾化ToolStripMenuItem";
+            this.雾化ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.雾化ToolStripMenuItem.Text = "雾化";
+            this.雾化ToolStripMenuItem.Click += new System.EventHandler(this.雾化ToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 627);
-            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.labelDownColor);
+            this.Controls.Add(this.labelUpColor);
+            this.Controls.Add(this.trackBarDownColor);
+            this.Controls.Add(this.trackBarUpColor);
             this.Controls.Add(this.numericUpDown3);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
@@ -364,9 +416,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarUpColor)).EndInit();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarDownColor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,7 +443,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar trackBarUpColor;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
@@ -404,6 +457,11 @@
         private System.Windows.Forms.ToolStripMenuItem 一般ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 究极马赛克ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 柔化ToolStripMenuItem;
+        private System.Windows.Forms.TrackBar trackBarDownColor;
+        private System.Windows.Forms.Label labelUpColor;
+        private System.Windows.Forms.Label labelDownColor;
+        private System.Windows.Forms.ToolStripMenuItem 锐化ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 雾化ToolStripMenuItem;
     }
 }
 

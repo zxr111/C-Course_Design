@@ -241,9 +241,13 @@ namespace WindowsFormsApplication3
                     for (int w = 0; w < bitmap.Height; w++)
                     {
                         pixel = newbitmap.GetPixel(h, w);
-                        red = (int)(255 - pixel.R);
-                        blue = (int)(255 - pixel.B);
-                        green = (int)(255 - pixel.G);
+                        red = (int)(125 - pixel.R);
+                        blue = (int)(125 - pixel.B);
+                        green = (int)(125 - pixel.G);
+                        //溢出处理
+                        red = red > 255 ? 255 : (red < 0 ? 0 : red);
+                        blue = blue > 255 ? 255 : (blue < 0 ? 0 : blue);
+                        green = green > 255 ? 255 : (green < 0 ? 0 : green);
                         newbitmap.SetPixel(h, w, Color.FromArgb(red, green, blue));
                     }
                 }
@@ -508,9 +512,63 @@ namespace WindowsFormsApplication3
             //菜单
         }
         //自定义调节
+        //调节亮
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            
+            if (bitmap != null)
+            {
+                Bitmap newbitmap = bitmap.Clone() as Bitmap;
+                Color pixel;
+                int red, green, blue;
+                for (int x = 0; x < newbitmap.Width; x++)
+                {
+                    for (int y = 0; y < newbitmap.Height; y++)
+                    {
+                        pixel = newbitmap.GetPixel(x, y);
+                        red = pixel.R;
+                        blue = pixel.B;
+                        green = pixel.G;
+                        red += trackBarUpColor.Value;
+                        green += trackBarUpColor.Value;
+                        blue += trackBarUpColor.Value;
+                        //溢出处理
+                        red = red > 255 ? 255 : (red < 0 ? 0 : red);
+                        blue = blue > 255 ? 255 : (blue < 0 ? 0 : blue);
+                        green = green > 255 ? 255 : (green < 0 ? 0 : green);
+                        newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
+                    }
+                }
+                pictureBox1.Image = newbitmap.Clone() as Image;
+            }
+        }
+        //调节暗
+        private void trackBarDownColor_Scroll(object sender, EventArgs e)
+        {
+            if (bitmap != null)
+            {
+                Bitmap newbitmap = bitmap.Clone() as Bitmap;
+                Color pixel;
+                int red, green, blue;
+                for (int x = 0; x < newbitmap.Width; x++)
+                {
+                    for (int y = 0; y < newbitmap.Height; y++)
+                    {
+                        pixel = newbitmap.GetPixel(x, y);
+                        red = pixel.R;
+                        blue = pixel.B;
+                        green = pixel.G;
+                        red -= trackBarUpColor.Value;
+                        green -= trackBarUpColor.Value;
+                        blue -= trackBarUpColor.Value;
+                        //溢出处理
+                        red = red > 255 ? 255 : (red < 0 ? 0 : red);
+                        blue = blue > 255 ? 255 : (blue < 0 ? 0 : blue);
+                        green = green > 255 ? 255 : (green < 0 ? 0 : green);
+                        newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
+                    }
+                }
+                pictureBox1.Image = newbitmap.Clone() as Image;
+            }
         }
 
         private void 薄码ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -766,5 +824,73 @@ namespace WindowsFormsApplication3
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }
+
+        private void 锐化ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (bitmap != null)
+            {
+                Bitmap newbitmap = bitmap.Clone() as Bitmap;
+                Color pixel;
+                int red, blue, green;
+                int index;
+                //拉普拉斯模板
+                int[] Laplacian = { -1, -1, -1, -1, 9, -1, -1, -1, -1 };
+                for (int x = 1; x < newbitmap.Width - 1; x++)
+                {
+                    for (int y = 1; y < newbitmap.Height - 1; y++)
+                    {
+                        red = 0;
+                        blue = 0;
+                        green = 0;
+                        index = 0;
+                        for (int col = -1; col <= 1; col++)
+                            for (int row = -1; row <= 1; row++)
+                            {
+                                pixel = newbitmap.GetPixel(x + row, y + col);
+                                red += pixel.R * Laplacian[index];
+                                blue += pixel.B * Laplacian[index];
+                                green += pixel.G * Laplacian[index];
+                                index++;
+                            }
+                        //溢出处理
+                        red = red > 255 ? 255 : (red < 0 ? 0 : red);
+                        blue = blue > 255 ? 255 : (blue < 0 ? 0 : blue);
+                        green = green > 255 ? 255 : (green < 0 ? 0 : green);
+                        newbitmap.SetPixel(x - 1, y - 1, Color.FromArgb(red, green, blue));
+                    }
+                }
+                pictureBox2.Image = newbitmap.Clone() as Image;
+            }
+        }
+
+        private void 雾化ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (bitmap != null)
+            {
+                Bitmap newbitmap = bitmap.Clone() as Bitmap;
+                Bitmap oldbitmap = (Bitmap)this.pictureBox1.Image;
+                Color pixel;
+                for (int x = 0; x < newbitmap.Width; x++)
+                {
+                    for (int y = 0; y < bitmap.Height; y++)
+                    {
+                        System.Random random = new Random();
+                        int k = random.Next(100000);
+                        //像素块大小
+                        int dx = x + k % 19;
+                        int dy = y + k % 19;
+                        if (dx >= oldbitmap.Width)
+                            dx = oldbitmap.Width - 1;
+                        if (dy >= oldbitmap.Height)
+                            dy = oldbitmap.Height - 1;
+                        pixel = oldbitmap.GetPixel(dx, dy);
+                        newbitmap.SetPixel(x, y, pixel);
+                    }
+                }
+                pictureBox2.Image = newbitmap.Clone() as Image;
+            }
+        }
+
+
     }
 }
