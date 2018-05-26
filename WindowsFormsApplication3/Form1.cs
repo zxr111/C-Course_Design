@@ -113,8 +113,6 @@ namespace WindowsFormsApplication3
             if (bitmap != null)
             {
                 Bitmap newbitmap = bitmap.Clone() as Bitmap;
-                //sw.Reset();
-                // sw.Restart();
                 Color pixel;
                 int red, green, blue;
                 for (int x = 0; x < newbitmap.Width; x++)
@@ -128,8 +126,6 @@ namespace WindowsFormsApplication3
                         newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
                     }
                 }
-                // sw.Stop();
-                // timer.Text = sw.ElapsedMilliseconds.ToString();
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }
@@ -390,8 +386,6 @@ namespace WindowsFormsApplication3
             if (bitmap != null)
             {
                 Bitmap newbitmap = bitmap.Clone() as Bitmap;
-                //sw.Reset();
-                // sw.Restart();
                 Color pixel;
                 int red, green, blue;
                 for (int x = 0; x < newbitmap.Width; x++)
@@ -425,8 +419,6 @@ namespace WindowsFormsApplication3
             if (bitmap != null)
             {
                 Bitmap newbitmap = bitmap.Clone() as Bitmap;
-                //sw.Reset();
-                //sw.Restart();
                 int RIDIO = 10;//马赛克的尺度，默认为周围两个像素
                 for (int h = 0; h < newbitmap.Height; h += RIDIO)
                 {
@@ -476,15 +468,15 @@ namespace WindowsFormsApplication3
                 Bitmap newbitmap = bitmap.Clone() as Bitmap;
                 Color pixel;
                 int red, blue, green;
-                for (int h = 0; h < newbitmap.Width; h++)
+                for (int x = 0; x < newbitmap.Width; x++)
                 {
-                    for (int w = 0; w < bitmap.Height; w++)
+                    for (int y = 0; y < bitmap.Height; y++)
                     {
-                        pixel = newbitmap.GetPixel(h, w);
+                        pixel = newbitmap.GetPixel(x, y);
                         red = (int)(255 - pixel.R);
                         blue = (int)(255 - pixel.B);
                         green = (int)(255 - pixel.G);
-                        newbitmap.SetPixel(h, w, Color.FromArgb(red, green, blue));
+                        newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
                     }
                 }
                 pictureBox2.Image = newbitmap.Clone() as Image;
@@ -497,8 +489,6 @@ namespace WindowsFormsApplication3
             if (bitmap != null)
             {
                 Bitmap newbitmap = bitmap.Clone() as Bitmap;
-                //sw.Reset();
-                // sw.Restart();
                 Color pixel;
                 int red, green, blue;
                 for (int x = 0; x < newbitmap.Width; x++)
@@ -512,14 +502,12 @@ namespace WindowsFormsApplication3
                         newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
                     }
                 }
-                // sw.Stop();
-                // timer.Text = sw.ElapsedMilliseconds.ToString();
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
 
             //菜单
         }
-
+        //自定义调节
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             
@@ -530,8 +518,6 @@ namespace WindowsFormsApplication3
             if (bitmap != null)
             {
                 Bitmap newbitmap = bitmap.Clone() as Bitmap;
-                //sw.Reset();
-                //sw.Restart();
                 int RIDIO = newbitmap.Width / 100;//马赛克的尺度，默认为周围两个像素
                 for (int h = 0; h < newbitmap.Height; h += RIDIO)
                 {
@@ -579,7 +565,7 @@ namespace WindowsFormsApplication3
                 Bitmap newbitmap = bitmap.Clone() as Bitmap;
                 //sw.Reset();
                 //sw.Restart();
-                int RIDIO = newbitmap.Width / 40;//马赛克的尺度，默认为周围两个像素
+                int RIDIO = newbitmap.Width / 40;//马赛克的尺度
                 for (int h = 0; h < newbitmap.Height; h += RIDIO)
                 {
                     for (int w = 0; w < newbitmap.Width; w += RIDIO)
@@ -624,9 +610,7 @@ namespace WindowsFormsApplication3
             if (bitmap != null)
             {
                 Bitmap newbitmap = bitmap.Clone() as Bitmap;
-                //sw.Reset();
-                //sw.Restart();
-                int RIDIO = newbitmap.Width / 5;//马赛克的尺度，默认为周围两个像素
+                int RIDIO = newbitmap.Width / 5;//马赛克的尺度
                 for (int h = 0; h < newbitmap.Height; h += RIDIO)
                 {
                     for (int w = 0; w < newbitmap.Width; w += RIDIO)
@@ -671,8 +655,6 @@ namespace WindowsFormsApplication3
             if (bitmap != null)
             {
                 Bitmap newbitmap = bitmap.Clone() as Bitmap;
-                //sw.Reset();
-                // sw.Restart();
                 Color pixel;
                 int red, green, blue;
                 for (int x = 0; x < newbitmap.Width; x++)
@@ -707,15 +689,15 @@ namespace WindowsFormsApplication3
                 Bitmap newbitmap = bitmap.Clone() as Bitmap;
                 Color pixel;
                 int red, blue, green;
-                for (int h = 0; h < newbitmap.Width; h++)
+                for (int x = 0; x < newbitmap.Width; x++)
                 {
-                    for (int w = 0; w < bitmap.Height; w++)
+                    for (int y = 0; y < bitmap.Height; y++)
                     {
-                        pixel = newbitmap.GetPixel(h, w);
+                        pixel = newbitmap.GetPixel(x, y);
                         red = (int)(255 - pixel.R);
                         blue = (int)(255 - pixel.B);
                         green = (int)(255 - pixel.G);
-                        newbitmap.SetPixel(h, w, Color.FromArgb(red, green, blue));
+                        newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
                     }
                 }
                 pictureBox2.Image = newbitmap.Clone() as Image;
@@ -727,8 +709,6 @@ namespace WindowsFormsApplication3
             if (bitmap != null)
             {
                 Bitmap newbitmap = bitmap.Clone() as Bitmap;
-                //sw.Reset();
-                // sw.Restart();
                 Color pixel;
                 int red, green, blue;
                 for (int x = 0; x < newbitmap.Width; x++)
@@ -742,8 +722,47 @@ namespace WindowsFormsApplication3
                         newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
                     }
                 }
-                // sw.Stop();
-                // timer.Text = sw.ElapsedMilliseconds.ToString();
+                pictureBox2.Image = newbitmap.Clone() as Image;
+            }
+        }
+
+        private void 柔化ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (bitmap != null)
+            {
+                Bitmap newbitmap = bitmap.Clone() as Bitmap;
+                Color pixel;
+                int red, blue, green;
+                int index;
+                //高斯模板
+                int[] Gauss = { 1, 2, 1, 2, 4, 2, 1, 2, 1 };
+                for (int x = 1; x < newbitmap.Width - 1; x++)
+                {
+                    for (int y = 1; y < newbitmap.Height - 1; y++)
+                    {
+                        red = 0;
+                        blue = 0;
+                        green = 0;
+                        index = 0;
+                        for (int col = -1; col <= 1; col++)
+                            for (int row = -1; row <= 1; row++)
+                            {
+                                pixel = newbitmap.GetPixel(x + row, y + col);
+                                red += pixel.R * Gauss[index];
+                                blue += pixel.B * Gauss[index];
+                                green += pixel.G * Gauss[index];
+                                index++;
+                            }
+                        red /= 16;
+                        blue /= 16;
+                        green /= 16;
+                        //溢出处理
+                        red = red > 255 ? 255 : (red < 0 ? 0 : red);
+                        blue = blue > 255 ? 255 : (blue < 0 ? 0 : blue);
+                        green = green > 255 ? 255 : (green < 0 ? 0 : green);
+                        newbitmap.SetPixel(x - 1, y - 1, Color.FromArgb(red, green, blue));
+                    }
+                }
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }

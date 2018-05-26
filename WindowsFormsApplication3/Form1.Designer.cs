@@ -52,11 +52,12 @@
             this.保存图片ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.黑白ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.马赛克ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.浮雕ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.变暗ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.薄码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.一般ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.究极马赛克ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.浮雕ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.变暗ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.柔化ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -215,7 +216,10 @@
             // 
             // trackBar1
             // 
+            this.trackBar1.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
+            this.trackBar1.LargeChange = 1;
             this.trackBar1.Location = new System.Drawing.Point(475, 466);
+            this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(128, 45);
             this.trackBar1.TabIndex = 21;
@@ -223,6 +227,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(16, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 25);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(919, 24);
@@ -236,7 +241,8 @@
             this.黑白ToolStripMenuItem1,
             this.马赛克ToolStripMenuItem1,
             this.浮雕ToolStripMenuItem1,
-            this.变暗ToolStripMenuItem});
+            this.变暗ToolStripMenuItem,
+            this.柔化ToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(919, 25);
@@ -284,6 +290,27 @@
             this.马赛克ToolStripMenuItem1.Size = new System.Drawing.Size(56, 21);
             this.马赛克ToolStripMenuItem1.Text = "马赛克";
             // 
+            // 薄码ToolStripMenuItem
+            // 
+            this.薄码ToolStripMenuItem.Name = "薄码ToolStripMenuItem";
+            this.薄码ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.薄码ToolStripMenuItem.Text = "薄码";
+            this.薄码ToolStripMenuItem.Click += new System.EventHandler(this.薄码ToolStripMenuItem_Click);
+            // 
+            // 一般ToolStripMenuItem
+            // 
+            this.一般ToolStripMenuItem.Name = "一般ToolStripMenuItem";
+            this.一般ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.一般ToolStripMenuItem.Text = "一般";
+            this.一般ToolStripMenuItem.Click += new System.EventHandler(this.一般ToolStripMenuItem_Click);
+            // 
+            // 究极马赛克ToolStripMenuItem
+            // 
+            this.究极马赛克ToolStripMenuItem.Name = "究极马赛克ToolStripMenuItem";
+            this.究极马赛克ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.究极马赛克ToolStripMenuItem.Text = "究极马赛克";
+            this.究极马赛克ToolStripMenuItem.Click += new System.EventHandler(this.究极马赛克ToolStripMenuItem_Click);
+            // 
             // 浮雕ToolStripMenuItem1
             // 
             this.浮雕ToolStripMenuItem1.Name = "浮雕ToolStripMenuItem1";
@@ -298,26 +325,12 @@
             this.变暗ToolStripMenuItem.Text = "变暗";
             this.变暗ToolStripMenuItem.Click += new System.EventHandler(this.变暗ToolStripMenuItem_Click);
             // 
-            // 薄码ToolStripMenuItem
+            // 柔化ToolStripMenuItem
             // 
-            this.薄码ToolStripMenuItem.Name = "薄码ToolStripMenuItem";
-            this.薄码ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.薄码ToolStripMenuItem.Text = "薄码";
-            this.薄码ToolStripMenuItem.Click += new System.EventHandler(this.薄码ToolStripMenuItem_Click);
-            // 
-            // 一般ToolStripMenuItem
-            // 
-            this.一般ToolStripMenuItem.Name = "一般ToolStripMenuItem";
-            this.一般ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.一般ToolStripMenuItem.Text = "一般";
-            this.一般ToolStripMenuItem.Click += new System.EventHandler(this.一般ToolStripMenuItem_Click);
-            // 
-            // 究极马赛克ToolStripMenuItem
-            // 
-            this.究极马赛克ToolStripMenuItem.Name = "究极马赛克ToolStripMenuItem";
-            this.究极马赛克ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.究极马赛克ToolStripMenuItem.Text = "究极马赛克";
-            this.究极马赛克ToolStripMenuItem.Click += new System.EventHandler(this.究极马赛克ToolStripMenuItem_Click);
+            this.柔化ToolStripMenuItem.Name = "柔化ToolStripMenuItem";
+            this.柔化ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.柔化ToolStripMenuItem.Text = "柔化";
+            this.柔化ToolStripMenuItem.Click += new System.EventHandler(this.柔化ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -390,6 +403,7 @@
         private System.Windows.Forms.ToolStripMenuItem 薄码ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 一般ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 究极马赛克ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 柔化ToolStripMenuItem;
     }
 }
 
