@@ -29,18 +29,12 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.OpenBox = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
@@ -58,11 +52,14 @@
             this.浮雕ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.变暗ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.柔化ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.锐化ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.雾化ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trackBarDownColor = new System.Windows.Forms.TrackBar();
             this.labelUpColor = new System.Windows.Forms.Label();
             this.labelDownColor = new System.Windows.Forms.Label();
-            this.锐化ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.雾化ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.trackBarFunction = new System.Windows.Forms.TrackBar();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -71,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarUpColor)).BeginInit();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarDownColor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarFunction)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -84,26 +82,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // OpenBox
-            // 
-            this.OpenBox.Location = new System.Drawing.Point(364, 578);
-            this.OpenBox.Name = "OpenBox";
-            this.OpenBox.Size = new System.Drawing.Size(96, 36);
-            this.OpenBox.TabIndex = 1;
-            this.OpenBox.Text = "打开图片";
-            this.OpenBox.UseVisualStyleBackColor = true;
-            this.OpenBox.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(449, 578);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 35);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "保存图片";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(475, 88);
@@ -113,16 +91,6 @@
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(9, 579);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 36);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "暗化";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -145,23 +113,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(197, 580);
+            this.button3.Location = new System.Drawing.Point(28, 564);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 35);
             this.button3.TabIndex = 8;
             this.button3.Text = "test";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(65, 580);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 36);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "马赛克";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label1
             // 
@@ -179,55 +137,45 @@
             this.label4.Size = new System.Drawing.Size(0, 12);
             this.label4.TabIndex = 14;
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(269, 580);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(74, 35);
-            this.button6.TabIndex = 15;
-            this.button6.Text = "浮雕";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(135, 578);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(68, 33);
-            this.button7.TabIndex = 16;
-            this.button7.Text = "黑白";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(723, 468);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 21);
             this.numericUpDown1.TabIndex = 17;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(723, 495);
+            this.numericUpDown2.Location = new System.Drawing.Point(723, 514);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 21);
             this.numericUpDown2.TabIndex = 18;
+            this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(723, 522);
+            this.numericUpDown3.Location = new System.Drawing.Point(723, 562);
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(120, 21);
             this.numericUpDown3.TabIndex = 19;
+            this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
             // 
             // trackBarUpColor
             // 
             this.trackBarUpColor.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
-            this.trackBarUpColor.Location = new System.Drawing.Point(45, 463);
+            this.trackBarUpColor.Location = new System.Drawing.Point(475, 514);
             this.trackBarUpColor.Maximum = 100;
+            this.trackBarUpColor.Minimum = 1;
             this.trackBarUpColor.Name = "trackBarUpColor";
             this.trackBarUpColor.Size = new System.Drawing.Size(216, 45);
-            this.trackBarUpColor.TabIndex = 21;
+            this.trackBarUpColor.TabIndex = 30;
+            this.trackBarUpColor.Value = 1;
             this.trackBarUpColor.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // menuStrip1
@@ -300,21 +248,21 @@
             // 薄码ToolStripMenuItem
             // 
             this.薄码ToolStripMenuItem.Name = "薄码ToolStripMenuItem";
-            this.薄码ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.薄码ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.薄码ToolStripMenuItem.Text = "薄码";
             this.薄码ToolStripMenuItem.Click += new System.EventHandler(this.薄码ToolStripMenuItem_Click);
             // 
             // 一般ToolStripMenuItem
             // 
             this.一般ToolStripMenuItem.Name = "一般ToolStripMenuItem";
-            this.一般ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.一般ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.一般ToolStripMenuItem.Text = "一般";
             this.一般ToolStripMenuItem.Click += new System.EventHandler(this.一般ToolStripMenuItem_Click);
             // 
             // 究极马赛克ToolStripMenuItem
             // 
             this.究极马赛克ToolStripMenuItem.Name = "究极马赛克ToolStripMenuItem";
-            this.究极马赛克ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.究极马赛克ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.究极马赛克ToolStripMenuItem.Text = "究极马赛克";
             this.究极马赛克ToolStripMenuItem.Click += new System.EventHandler(this.究极马赛克ToolStripMenuItem_Click);
             // 
@@ -339,34 +287,6 @@
             this.柔化ToolStripMenuItem.Text = "柔化";
             this.柔化ToolStripMenuItem.Click += new System.EventHandler(this.柔化ToolStripMenuItem_Click);
             // 
-            // trackBarDownColor
-            // 
-            this.trackBarDownColor.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
-            this.trackBarDownColor.Location = new System.Drawing.Point(45, 498);
-            this.trackBarDownColor.Maximum = 100;
-            this.trackBarDownColor.Name = "trackBarDownColor";
-            this.trackBarDownColor.Size = new System.Drawing.Size(216, 45);
-            this.trackBarDownColor.TabIndex = 26;
-            this.trackBarDownColor.Scroll += new System.EventHandler(this.trackBarDownColor_Scroll);
-            // 
-            // labelUpColor
-            // 
-            this.labelUpColor.AutoSize = true;
-            this.labelUpColor.Location = new System.Drawing.Point(-2, 463);
-            this.labelUpColor.Name = "labelUpColor";
-            this.labelUpColor.Size = new System.Drawing.Size(41, 12);
-            this.labelUpColor.TabIndex = 27;
-            this.labelUpColor.Text = "调亮：";
-            // 
-            // labelDownColor
-            // 
-            this.labelDownColor.AutoSize = true;
-            this.labelDownColor.Location = new System.Drawing.Point(-2, 495);
-            this.labelDownColor.Name = "labelDownColor";
-            this.labelDownColor.Size = new System.Drawing.Size(41, 12);
-            this.labelDownColor.TabIndex = 28;
-            this.labelDownColor.Text = "调暗：";
-            // 
             // 锐化ToolStripMenuItem
             // 
             this.锐化ToolStripMenuItem.Name = "锐化ToolStripMenuItem";
@@ -381,11 +301,75 @@
             this.雾化ToolStripMenuItem.Text = "雾化";
             this.雾化ToolStripMenuItem.Click += new System.EventHandler(this.雾化ToolStripMenuItem_Click);
             // 
+            // trackBarDownColor
+            // 
+            this.trackBarDownColor.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
+            this.trackBarDownColor.Location = new System.Drawing.Point(475, 554);
+            this.trackBarDownColor.Maximum = 100;
+            this.trackBarDownColor.Minimum = 1;
+            this.trackBarDownColor.Name = "trackBarDownColor";
+            this.trackBarDownColor.Size = new System.Drawing.Size(216, 45);
+            this.trackBarDownColor.TabIndex = 30;
+            this.trackBarDownColor.Value = 1;
+            this.trackBarDownColor.Scroll += new System.EventHandler(this.trackBarDownColor_Scroll);
+            // 
+            // labelUpColor
+            // 
+            this.labelUpColor.AutoSize = true;
+            this.labelUpColor.Location = new System.Drawing.Point(428, 523);
+            this.labelUpColor.Name = "labelUpColor";
+            this.labelUpColor.Size = new System.Drawing.Size(41, 12);
+            this.labelUpColor.TabIndex = 27;
+            this.labelUpColor.Text = "调亮：";
+            // 
+            // labelDownColor
+            // 
+            this.labelDownColor.AutoSize = true;
+            this.labelDownColor.Location = new System.Drawing.Point(428, 564);
+            this.labelDownColor.Name = "labelDownColor";
+            this.labelDownColor.Size = new System.Drawing.Size(41, 12);
+            this.labelDownColor.TabIndex = 28;
+            this.labelDownColor.Text = "调暗：";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(158, 564);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 35);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "NLM";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // trackBarFunction
+            // 
+            this.trackBarFunction.Location = new System.Drawing.Point(475, 463);
+            this.trackBarFunction.Maximum = 255;
+            this.trackBarFunction.Minimum = 1;
+            this.trackBarFunction.Name = "trackBarFunction";
+            this.trackBarFunction.Size = new System.Drawing.Size(216, 45);
+            this.trackBarFunction.TabIndex = 30;
+            this.trackBarFunction.Value = 1;
+            this.trackBarFunction.Visible = false;
+            this.trackBarFunction.Scroll += new System.EventHandler(this.trackBarFunctionUp_Scroll);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(426, 468);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "效果调节";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 627);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.trackBarFunction);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.labelDownColor);
             this.Controls.Add(this.labelUpColor);
             this.Controls.Add(this.trackBarDownColor);
@@ -393,18 +377,12 @@
             this.Controls.Add(this.numericUpDown3);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.OpenBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
@@ -420,6 +398,7 @@
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarDownColor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarFunction)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -428,18 +407,12 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button OpenBox;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
@@ -462,6 +435,9 @@
         private System.Windows.Forms.Label labelDownColor;
         private System.Windows.Forms.ToolStripMenuItem 锐化ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 雾化ToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TrackBar trackBarFunction;
+        private System.Windows.Forms.Label label5;
     }
 }
 
