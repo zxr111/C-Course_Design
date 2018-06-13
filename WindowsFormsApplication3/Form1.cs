@@ -17,6 +17,7 @@ namespace WindowsFormsApplication3
         Bitmap bitmap = null;
         byte[] RGB;
         int flag;     //flag = 0 表示黑白 1 表示马赛克 2 表示浮雕
+        Stack<Bitmap> stack = new Stack<Bitmap>();  //保存每步执行的操作
         public MainForm()
         {
             InitializeComponent();
@@ -129,6 +130,7 @@ namespace WindowsFormsApplication3
                         newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }
@@ -176,6 +178,7 @@ namespace WindowsFormsApplication3
                         }
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }//马赛克
         }
@@ -223,6 +226,7 @@ namespace WindowsFormsApplication3
                         }
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }//马赛克
         }
@@ -254,6 +258,7 @@ namespace WindowsFormsApplication3
                         newbitmap.SetPixel(h, w, Color.FromArgb(red, green, blue));
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }//浮雕
@@ -273,6 +278,7 @@ namespace WindowsFormsApplication3
                     for (int y = 0; y < newbitmap.Height; y++)
                     {
                         pixel = newbitmap.GetPixel(x, y);
+                        //大于取黑否则白
                         if (pixel.R > 125 || pixel.G > 125 || pixel.B > 125)
                         {
                             red = (int)(255);
@@ -289,6 +295,7 @@ namespace WindowsFormsApplication3
                         }
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }//黑白
@@ -416,6 +423,7 @@ namespace WindowsFormsApplication3
                         }
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }
@@ -462,6 +470,7 @@ namespace WindowsFormsApplication3
                         }
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }//马赛克
 
@@ -486,6 +495,7 @@ namespace WindowsFormsApplication3
                         newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }
@@ -509,6 +519,7 @@ namespace WindowsFormsApplication3
                         newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
 
@@ -542,6 +553,7 @@ namespace WindowsFormsApplication3
                         newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }
@@ -572,6 +584,7 @@ namespace WindowsFormsApplication3
                         newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }
@@ -619,6 +632,7 @@ namespace WindowsFormsApplication3
                         }
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }//马赛克
         }
@@ -668,6 +682,7 @@ namespace WindowsFormsApplication3
                         }
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }//马赛克
         }
@@ -715,6 +730,7 @@ namespace WindowsFormsApplication3
                         }
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }//马赛克
         }
@@ -750,6 +766,7 @@ namespace WindowsFormsApplication3
                         }
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }
@@ -774,6 +791,7 @@ namespace WindowsFormsApplication3
                         newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }
@@ -796,6 +814,7 @@ namespace WindowsFormsApplication3
                         newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }
@@ -837,6 +856,7 @@ namespace WindowsFormsApplication3
                         newbitmap.SetPixel(x - 1, y - 1, Color.FromArgb(red, green, blue));
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }
@@ -875,6 +895,7 @@ namespace WindowsFormsApplication3
                         newbitmap.SetPixel(x - 1, y - 1, Color.FromArgb(red, green, blue));
                     }
                 }
+                stack.Push(newbitmap);
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }
@@ -1004,6 +1025,7 @@ namespace WindowsFormsApplication3
                             }
                         }
                     }
+                    stack.Push(newbitmap);
                     pictureBox2.Image = newbitmap.Clone() as Image;
                 }//马赛克
             }
@@ -1038,6 +1060,7 @@ namespace WindowsFormsApplication3
                             }
                         }
                     }
+                    stack.Push(newbitmap);
                     pictureBox2.Image = newbitmap.Clone() as Image;
                 }
             }
@@ -1066,6 +1089,7 @@ namespace WindowsFormsApplication3
                             newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
                         }
                     }
+                    stack.Push(newbitmap);
                     pictureBox2.Image = newbitmap.Clone() as Image;
                 }
             }
@@ -1086,6 +1110,14 @@ namespace WindowsFormsApplication3
         private void numericUpDown3_ValueChanged(object sender, EventArgs e)
         {
             trackBarDownColor.Value = (int)numericUpDown3.Value;
+        }
+
+        private void Last_Click(object sender, EventArgs e)
+        {
+            if (stack.Count != 0)
+                pictureBox2.Image = stack.Pop();
+            else
+                MessageBox.Show("没有上一步操作了。。");
         }
 
 

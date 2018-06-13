@@ -60,6 +60,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.trackBarFunction = new System.Windows.Forms.TrackBar();
             this.label5 = new System.Windows.Forms.Label();
+            this.Last = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -248,21 +249,21 @@
             // 薄码ToolStripMenuItem
             // 
             this.薄码ToolStripMenuItem.Name = "薄码ToolStripMenuItem";
-            this.薄码ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.薄码ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.薄码ToolStripMenuItem.Text = "薄码";
             this.薄码ToolStripMenuItem.Click += new System.EventHandler(this.薄码ToolStripMenuItem_Click);
             // 
             // 一般ToolStripMenuItem
             // 
             this.一般ToolStripMenuItem.Name = "一般ToolStripMenuItem";
-            this.一般ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.一般ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.一般ToolStripMenuItem.Text = "一般";
             this.一般ToolStripMenuItem.Click += new System.EventHandler(this.一般ToolStripMenuItem_Click);
             // 
             // 究极马赛克ToolStripMenuItem
             // 
             this.究极马赛克ToolStripMenuItem.Name = "究极马赛克ToolStripMenuItem";
-            this.究极马赛克ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.究极马赛克ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.究极马赛克ToolStripMenuItem.Text = "究极马赛克";
             this.究极马赛克ToolStripMenuItem.Click += new System.EventHandler(this.究极马赛克ToolStripMenuItem_Click);
             // 
@@ -362,11 +363,22 @@
             this.label5.TabIndex = 31;
             this.label5.Text = "效果调节";
             // 
+            // Last
+            // 
+            this.Last.Location = new System.Drawing.Point(414, 67);
+            this.Last.Name = "Last";
+            this.Last.Size = new System.Drawing.Size(55, 24);
+            this.Last.TabIndex = 32;
+            this.Last.Text = "上一次";
+            this.Last.UseVisualStyleBackColor = true;
+            this.Last.Click += new System.EventHandler(this.Last_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 627);
+            this.Controls.Add(this.Last);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.trackBarFunction);
             this.Controls.Add(this.button1);
@@ -438,6 +450,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TrackBar trackBarFunction;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button Last;
     }
 }
 
